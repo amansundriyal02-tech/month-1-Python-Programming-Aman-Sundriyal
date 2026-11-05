@@ -17,6 +17,7 @@ A collection of beginner-friendly Python exercises and mini-projects covering co
 | `client_project.py` | Cleans temperature data and calculates city-wise averages |
 | `dashboard.py` | Generates plots and a student-performance dashboard |
 | `main.py` | Interactive menu for the NumPy/Pandas activities |
+| `test_projects.py` | Automated unit and data-project tests |
 | `sample_data.csv` | Sample temperature dataset for cleaning |
 | `student_performance.csv` | Sample student dataset for visualization |
 
@@ -83,6 +84,16 @@ python dashboard.py
 
 The temperature cleaning project creates `cleaned_temperature_data.csv`. The dashboard creates image files inside the `plots/` directory.
 
+## Run automated tests
+
+Run the tests from the repository root:
+
+```bash
+python -m unittest discover -v
+```
+
+The tests cover calculator operations and errors, temperature conversions, data cleaning, transformations, the temperature aggregation results, and dashboard plot generation.
+
 ## Learning outcomes
 
 - Use variables, input, conditions, loops, and functions.
@@ -92,6 +103,7 @@ The temperature cleaning project creates `cleaned_temperature_data.csv`. The das
 - Analyze tabular data with Pandas.
 - Handle missing, invalid, and duplicate data.
 - Create data visualizations with Matplotlib and Seaborn.
+- Write and run automated tests.
 
 ## Notes
 
