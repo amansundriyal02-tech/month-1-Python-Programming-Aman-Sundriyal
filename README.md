@@ -1,69 +1,100 @@
-# Week 3: NumPy and Pandas for Data Manipulation
+# Month 1 – Python Programming
 
-## Project Overview
-This project practices NumPy arrays and operations, broadcasting, and Pandas Series, DataFrames, indexing, and grouping. The client project cleans a sample temperature dataset and calculates average temperature by city.
+A collection of beginner-friendly Python exercises and mini-projects covering core Python, data structures, NumPy, Pandas, data cleaning, and data visualization.
 
-## Files
-- `main.py` — Menu to run the Week 3 activities.
-- `numpy_operations.py` — NumPy array creation, arithmetic, statistics, 2D arrays, and broadcasting.
-- `pandas_operations.py` — Series, DataFrames, indexing, filtering, and grouping.
-- `client_project.py` — Removes duplicate and incomplete records, then calculates average temperature by city.
-- `sample_data.csv` — Sample temperature dataset containing duplicate and missing values for cleaning practice.
-- `requirements.txt` — Required Python libraries.
-- `README.md` — Summary of concepts and instructions.
+## Repository contents
 
-## Concepts Learned
+| File | Purpose |
+|---|---|
+| `average_temperature.py` | Calculates the average of multiple temperature readings |
+| `calculator.py` | Performs addition, subtraction, multiplication, and division |
+| `temperature_converter.py` | Converts Celsius to Fahrenheit and Fahrenheit to Celsius |
+| `data_structures.py` | Demonstrates lists, tuples, dictionaries, sets, and list comprehensions |
+| `transformations.py` | Demonstrates functions, lambda, filter, sorting, recursion, and comprehensions |
+| `data_cleaning.py` | Removes duplicate and invalid student records |
+| `numpy_operations.py` | Demonstrates arrays, arithmetic, statistics, and broadcasting |
+| `pandas_operations.py` | Demonstrates Series, DataFrames, selection, filtering, and grouping |
+| `client_project.py` | Cleans temperature data and calculates city-wise averages |
+| `dashboard.py` | Generates plots and a student-performance dashboard |
+| `main.py` | Interactive menu for the NumPy/Pandas activities |
+| `sample_data.csv` | Sample temperature dataset for cleaning |
+| `student_performance.csv` | Sample student dataset for visualization |
 
-1. **NumPy arrays:** NumPy arrays store numerical data efficiently and support operations on whole arrays.
-2. **Array operations:** Arithmetic operations such as addition, multiplication, and exponentiation can be applied element-wise.
-3. **Broadcasting:** NumPy can apply an operation between arrays or between an array and a compatible single value/shape.
-4. **Pandas Series:** A one-dimensional labelled data structure.
-5. **Pandas DataFrame:** A two-dimensional table with rows and columns.
-6. **Indexing:** Select columns and rows using column names, `.loc`, and `.iloc`.
-7. **Data grouping:** `groupby()` groups rows by a category and allows calculations such as mean.
+## Requirements
 
-## Hands-On Activities
-- Create NumPy one-dimensional and two-dimensional arrays.
-- Perform arithmetic and statistical operations.
-- Demonstrate broadcasting by adding a number to every matrix element.
-- Create a Pandas Series and DataFrame.
-- Select columns and rows, filter values, and calculate group averages.
+- Python 3.9 or newer
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
 
-## Client Project: Clean and Aggregate Temperature Data
-The sample CSV includes duplicate records and missing city/temperature values. The project:
-1. Reads the CSV file with Pandas.
-2. Removes duplicate rows using `drop_duplicates()`.
-3. Removes rows with missing required values using `dropna()`.
-4. Converts temperature values to numeric data.
-5. Trims extra spaces from city names.
-6. Groups the cleaned data by city and calculates average temperature.
-7. Saves the cleaned records to `cleaned_temperature_data.csv`.
+## Setup
 
-## How to Run
-1. Install Python 3.
-2. Open a terminal in this folder.
-3. Install dependencies:
+Clone or download this repository, then open a terminal in the project folder.
+
+Create and activate a virtual environment (recommended):
 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
 ```
 
-4. Run the menu:
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Run the programs
+
+Run the Week 3 interactive NumPy/Pandas menu:
 
 ```bash
 python main.py
 ```
 
-To run only the client project:
+Run individual exercises:
+
+```bash
+python calculator.py
+python average_temperature.py
+python temperature_converter.py
+python data_cleaning.py
+python transformations.py
+```
+
+Run the data projects:
 
 ```bash
 python client_project.py
+python dashboard.py
 ```
 
-## Expected Client Project Result
-After cleaning the provided sample dataset, 6 valid unique records remain. Average temperatures are calculated separately for Delhi, Jaipur, and Mumbai. The exact results are printed when the script runs.
+The temperature cleaning project creates `cleaned_temperature_data.csv`. The dashboard creates image files inside the `plots/` directory.
 
-## Requirements
-- Python 3
-- NumPy
-- Pandas
+## Learning outcomes
+
+- Use variables, input, conditions, loops, and functions.
+- Work with common Python data structures.
+- Apply lambda functions, filtering, sorting, and recursion.
+- Create and manipulate NumPy arrays.
+- Analyze tabular data with Pandas.
+- Handle missing, invalid, and duplicate data.
+- Create data visualizations with Matplotlib and Seaborn.
+
+## Notes
+
+- Run commands from the repository root so the sample CSV files are found.
+- Do not commit virtual environments, cache files, or generated output files.
+- The sample datasets are small learning examples, not real-world statistical samples.
