@@ -1,54 +1,31 @@
-"""
-Week 2: Data Structures and Functions
-Menu-driven practice for lists, tuples, dictionaries, sets, functions,
-lambda functions, recursion, list comprehension, and data cleaning.
-"""
+"""Week 3: NumPy and Pandas for Data Manipulation."""
 
-from data_structures import demonstrate_data_structures
-from transformations import sum_of_squares, filter_even_numbers, recursive_sum
-from data_cleaning import clean_records, sample_records
+from numpy_operations import demonstrate_numpy
+from pandas_operations import demonstrate_pandas
+from client_project import run_data_cleaning_project
 
 
 def main():
     while True:
-        print("\n========== WEEK 2 PYTHON PROJECT ==========")
-        print("1. Data structures demonstration")
-        print("2. Sum of squares")
-        print("3. Filter even numbers")
-        print("4. Recursive sum")
-        print("5. Client project: clean sample data")
-        print("6. Exit")
+        print("\n========== WEEK 3: NUMPY AND PANDAS ==========")
+        print("1. NumPy arrays and operations")
+        print("2. Pandas Series, DataFrames, indexing and grouping")
+        print("3. Client project: clean and aggregate dataset")
+        print("4. Exit")
 
-        choice = input("Choose an option (1-6): ").strip()
+        choice = input("Choose an option (1-4): ").strip()
 
         if choice == "1":
-            demonstrate_data_structures()
+            demonstrate_numpy()
         elif choice == "2":
-            values = [1, 2, 3, 4, 5]
-            print("Numbers:", values)
-            print("Sum of squares:", sum_of_squares(values))
+            demonstrate_pandas()
         elif choice == "3":
-            values = [1, 2, 3, 4, 5, 6, 7, 8]
-            print("Numbers:", values)
-            print("Even numbers:", filter_even_numbers(values))
+            run_data_cleaning_project()
         elif choice == "4":
-            number = int(input("Enter a non-negative integer: "))
-            if number < 0:
-                print("Please enter a non-negative integer.")
-            else:
-                print(f"Sum from 1 to {number}:", recursive_sum(number))
-        elif choice == "5":
-            cleaned = clean_records(sample_records())
-            print("\nCleaned records:")
-            for record in cleaned:
-                print(record)
-            print("Original record count:", len(sample_records()))
-            print("Cleaned record count:", len(cleaned))
-        elif choice == "6":
-            print("Thank you for using the Week 2 project!")
+            print("Thank you for using the Week 3 project!")
             break
         else:
-            print("Invalid choice. Select an option from 1 to 6.")
+            print("Invalid choice. Please select 1, 2, 3, or 4.")
 
 
 if __name__ == "__main__":

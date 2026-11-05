@@ -1,1 +1,2 @@
-pandas\nmatplotlib\nseaborn\n
+numpy
+pandas
