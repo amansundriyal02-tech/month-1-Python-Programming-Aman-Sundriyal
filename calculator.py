@@ -1,19 +1,31 @@
-# Basic calculator using if-elif-else
+"""Basic command-line calculator with input validation."""
 
-num1 = float(input("Enter first number: "))
-operator = input("Enter operator (+, -, *, /): ")
-num2 = float(input("Enter second number: "))
 
-if operator == "+":
-    print("Result:", num1 + num2)
-elif operator == "-":
-    print("Result:", num1 - num2)
-elif operator == "*":
-    print("Result:", num1 * num2)
-elif operator == "/":
-    if num2 != 0:
-        print("Result:", num1 / num2)
-    else:
-        print("Error: Cannot divide by zero.")
-else:
-    print("Invalid operator.")
+def calculate(num1, operator, num2):
+    if operator == "+":
+        return num1 + num2
+    if operator == "-":
+        return num1 - num2
+    if operator == "*":
+        return num1 * num2
+    if operator == "/":
+        if num2 == 0:
+            raise ZeroDivisionError("Cannot divide by zero.")
+        return num1 / num2
+    raise ValueError("Unsupported operator. Use +, -, *, or /.")
+
+
+def main():
+    try:
+        num1 = float(input("Enter first number: "))
+        operator = input("Enter operator (+, -, *, /): ").strip()
+        num2 = float(input("Enter second number: "))
+        print("Result:", calculate(num1, operator, num2))
+    except ValueError as error:
+        print("Input error:", error)
+    except ZeroDivisionError as error:
+        print("Error:", error)
+
+
+if __name__ == "__main__":
+    main()
