@@ -1,94 +1,54 @@
 """
-Week 1: Introduction to Python Programming
-A beginner-friendly menu program demonstrating input/output, variables,
-data types, operators, if-else, for loops, and while loops.
+Week 2: Data Structures and Functions
+Menu-driven practice for lists, tuples, dictionaries, sets, functions,
+lambda functions, recursion, list comprehension, and data cleaning.
 """
 
-def temperature_converter():
-    print("\n--- Temperature Converter ---")
-    celsius = float(input("Enter temperature in Celsius: "))
-    fahrenheit = (celsius * 9 / 5) + 32
-    print(f"{celsius:.2f}°C = {fahrenheit:.2f}°F")
-
-
-def calculator():
-    print("\n--- Simple Calculator ---")
-    num1 = float(input("Enter first number: "))
-    operator = input("Enter operator (+, -, *, /): ")
-    num2 = float(input("Enter second number: "))
-
-    if operator == "+":
-        result = num1 + num2
-    elif operator == "-":
-        result = num1 - num2
-    elif operator == "*":
-        result = num1 * num2
-    elif operator == "/":
-        if num2 == 0:
-            print("Error: Division by zero is not allowed.")
-            return
-        result = num1 / num2
-    else:
-        print("Invalid operator. Please use +, -, *, or /.")
-        return
-
-    print("Result:", result)
-
-
-def average_temperature():
-    print("\n--- Average Temperature Calculator ---")
-    count = int(input("How many temperature readings do you want to enter? "))
-
-    if count <= 0:
-        print("Please enter a number greater than zero.")
-        return
-
-    total = 0.0
-    for day in range(1, count + 1):
-        temperature = float(input(f"Enter temperature for reading {day}: "))
-        total += temperature
-
-    average = total / count
-    print(f"Average temperature: {average:.2f}°C")
-
-
-def show_loop_demo():
-    print("\n--- Loop Demonstration ---")
-    print("Using for loop:")
-    for number in range(1, 6):
-        print(number)
-
-    print("Using while loop:")
-    count = 1
-    while count <= 5:
-        print(count)
-        count += 1
+from data_structures import demonstrate_data_structures
+from transformations import sum_of_squares, filter_even_numbers, recursive_sum
+from data_cleaning import clean_records, sample_records
 
 
 def main():
     while True:
-        print("\n========== WEEK 1 PYTHON PROJECT ==========")
-        print("1. Temperature Converter")
-        print("2. Simple Calculator")
-        print("3. Average Temperature (Client Project)")
-        print("4. For and While Loop Demo")
-        print("5. Exit")
+        print("\n========== WEEK 2 PYTHON PROJECT ==========")
+        print("1. Data structures demonstration")
+        print("2. Sum of squares")
+        print("3. Filter even numbers")
+        print("4. Recursive sum")
+        print("5. Client project: clean sample data")
+        print("6. Exit")
 
-        choice = input("Choose an option (1-5): ")
+        choice = input("Choose an option (1-6): ").strip()
 
         if choice == "1":
-            temperature_converter()
+            demonstrate_data_structures()
         elif choice == "2":
-            calculator()
+            values = [1, 2, 3, 4, 5]
+            print("Numbers:", values)
+            print("Sum of squares:", sum_of_squares(values))
         elif choice == "3":
-            average_temperature()
+            values = [1, 2, 3, 4, 5, 6, 7, 8]
+            print("Numbers:", values)
+            print("Even numbers:", filter_even_numbers(values))
         elif choice == "4":
-            show_loop_demo()
+            number = int(input("Enter a non-negative integer: "))
+            if number < 0:
+                print("Please enter a non-negative integer.")
+            else:
+                print(f"Sum from 1 to {number}:", recursive_sum(number))
         elif choice == "5":
-            print("Thank you for using the Week 1 Python Project!")
+            cleaned = clean_records(sample_records())
+            print("\nCleaned records:")
+            for record in cleaned:
+                print(record)
+            print("Original record count:", len(sample_records()))
+            print("Cleaned record count:", len(cleaned))
+        elif choice == "6":
+            print("Thank you for using the Week 2 project!")
             break
         else:
-            print("Invalid choice. Please select a number from 1 to 5.")
+            print("Invalid choice. Select an option from 1 to 6.")
 
 
 if __name__ == "__main__":
