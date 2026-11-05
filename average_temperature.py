@@ -1,15 +1,26 @@
-# Client Project: Calculate average temperature
+"""Calculate the average of user-entered temperature readings."""
 
-number_of_readings = int(input("Enter number of temperature readings: "))
 
-if number_of_readings <= 0:
-    print("Please enter at least one reading.")
-else:
-    total = 0.0
+def main():
+    try:
+        count = int(input("Enter number of temperature readings: "))
+        if count <= 0:
+            print("Please enter at least one reading.")
+            return
 
-    for day in range(1, number_of_readings + 1):
-        temperature = float(input(f"Enter temperature {day}: "))
-        total = total + temperature
+        readings = []
+        for day in range(1, count + 1):
+            while True:
+                try:
+                    readings.append(float(input(f"Enter temperature {day}: ")))
+                    break
+                except ValueError:
+                    print("Please enter a valid number.")
 
-    average = total / number_of_readings
-    print(f"Average temperature is {average:.2f}°C")
+        print(f"Average temperature is {sum(readings) / count:.2f}°C")
+    except ValueError:
+        print("Please enter a whole number for the number of readings.")
+
+
+if __name__ == "__main__":
+    main()
